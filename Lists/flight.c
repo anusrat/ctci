@@ -45,7 +45,7 @@ void flight::displayMessage()    //breaking up your code into small blocks in or
 void flight::seatCheck ()
 {
   int seats[30], i;        //reducing the size of the array. as you have seen unused and uncleaned up memory during and after program runs
-  bool is_booked = false;  //cause memory leak and hence crash. essentially we should be using a cevtor here, which is a dynamically allocated array i.e
+  bool is_booked = false;  //cause memory leak and hence crash. essentially we should be using a vector here, which is a dynamically allocated array i.e
                            //it increases in space as and when required.
   cout << "\nChecking Availability Of Seats...";
   cout << "\n";
