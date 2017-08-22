@@ -35,7 +35,7 @@ class linkedList
 	
 	~linkedList();
 	
-	void createNode (int x)
+	void insert (int x)
 	{
 		Node* temp;
 		temp.data = x;
@@ -50,8 +50,8 @@ class linkedList
 		{
 			tail.next = temp;
 		}	
- }
- 
+  }
+
 linkedList addList (linkedList &list2)
 {
 	int sum, carry;
@@ -60,7 +60,6 @@ linkedList addList (linkedList &list2)
 
   node *cur1 = new node;
   node *cur2 = new node;
-  node *iterator = new node;
   linkedList res = new linkedList();
   cur1 = this.head;
   cur2 = list2.head;
@@ -69,22 +68,8 @@ linkedList addList (linkedList &list2)
 	{ 	
 		return;
 	}
-	
-  length1 = list1.length();
-	length2 = list2.length();
  
-  if (length1 > length2)
-	{
-		iterator = cur1;
-    list2.insert(0); //pad with zero
-  }	
-  else
-  {
- 		iterator = cur2;
-    list1.insert(0);
-	}
-  
-  while (iterator)
+  while (cur1 != nullptr || cur2 != nullptr)
 	{
 		sum = cur1.data + cur2.data + carry;
 		sum = sum%10;
